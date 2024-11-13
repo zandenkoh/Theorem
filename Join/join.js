@@ -64,14 +64,15 @@ nextButton.addEventListener('click', () => {
 // Handle showing sign-up form
 const showSignUpButton = document.getElementById('show-signup');
 const signUpForm = document.getElementById('sign-up-form');
+const backStep = document.getElementById('back-step');
 
 showSignUpButton.addEventListener('click', () => {
   signUpForm.classList.add('active'); // Show sign-up form as a popup
 });
 
 // Close the sign-up form if clicked outside
-signUpForm.addEventListener('click', (event) => {
-  if (event.target === signUpForm) {
+backStep.addEventListener('click', (event) => {
+  if (event.target === backStep) {
     signUpForm.classList.remove('active'); // Close the sign-up popup
   }
 });
@@ -107,18 +108,19 @@ nextStep2Button.addEventListener('click', () => {
 });
 
 // Step 3 (Agree to Terms & Conditions)
-const agreeTermsCheckbox = document.getElementById('agree-terms');
+//const agreeTermsCheckbox = document.getElementById('agree-terms');
 const signUpButton = document.getElementById('sign-up-button');
 
-agreeTermsCheckbox.addEventListener('change', () => {
+/*agreeTermsCheckbox.addEventListener('change', () => {
   signUpButton.disabled = !agreeTermsCheckbox.checked; // Enable/disable sign-up button
-});
+});*/
 
 signUpButton.addEventListener('click', () => {
   const user = auth.currentUser;
   const userId = user.uid;
   const name = document.getElementById('name').value;
   const dob = document.getElementById('dob').value;
+  signUpButton.disabled = true;
 
   firestore.collection('users').doc(userId).set({
     name: name,
@@ -129,11 +131,11 @@ signUpButton.addEventListener('click', () => {
     creds: 0
   })
   .then(() => {
-    signUpButton.disabled = true; // Disable sign-up button
     alert('Account created successfully!');
     signUpForm.classList.remove('active'); // Close the sign-up form
   })
   .catch(error => {
     alert('Error creating account: ' + error.message);
+    signUpButton.disabled = false;
   });
 });
