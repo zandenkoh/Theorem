@@ -117,7 +117,7 @@ button:disabled {
 }
 
 /* Forgot password link */
-#forgot-password {
+#forgot-password, #back-step {
   margin-top: 20px;
   padding: 12px 15px;
   font-size: 14px;
@@ -131,7 +131,7 @@ button:disabled {
   margin-bottom: 25px;
 }
 
-#forgot-password:hover {
+#forgot-password:hover, #back-step:hover {
   opacity: 1;
   background: #f9f9f9;
 }
@@ -167,6 +167,7 @@ button:disabled {
 
 .form-popup.active {
   display: flex;
+
 }
 
 .form-content {
@@ -185,24 +186,58 @@ button:disabled {
   display: block;
 }
 
-
+#dob {
+  background: #fff;
+}
 
 .form-step input {
   width: 100%;
-  padding: 15px 20px;
-  margin: 0 0;
-  margin-bottom: 10px;
+  padding: 18px 10px;
+  margin: 10px 0;
+  margin-bottom: 20px;
   border: 3px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
+  font-weight: 500;
   color: #000;
-  background-color: transparent;
+  background-color: #fff;
   transition: border 0s ease-in-out;
 }
 
-.sign-up-labels {
-  font-size: 15px;
+.form-step input::placeholder {
+  color: #555;
+}
+
+.form-step input:focus::placeholder {
   color: #000;
+}
+
+.form-step input:focus {
+  border: 3px solid #3398ea;
+  outline: none;
+}
+
+.form-step h3 {
+  text-align: left;
+  font-size: 15px;
+}
+
+.form-step p {
+  text-align: left;
+  font-size: 13px;
+}
+
+#password {
+  background: #fff;
+}
+
+.sign-up-labels {
+  position: absolute;
+  background: #fff;
+  padding: 0px 5px;
+  margin-top: 1px;
+  margin-left: 10px;
+  font-size: 14px;
 }
 
 .form-step button {
@@ -219,6 +254,10 @@ button:disabled {
 
 .form-step button:hover {
   opacity: 0.7;
+}
+
+#next-step-1, #next-step-2 {
+  margin-top: 20px;
 }
 
 .form-step p {
@@ -259,12 +298,13 @@ input[type="password"] {
 }
 
 #sign-up-button {
-  background-color: #28a745;
+  background-color: #000;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 #sign-up-button:disabled {
-  background-color: #ddd;
+  background-color: #ccc;
   cursor: not-allowed;
 }
 
