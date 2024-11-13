@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Join Theorem</title>
+  <link rel="icon" href="./Assets/Neutron-1.png">
   <link rel="stylesheet" href="join.css">
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -16,7 +17,7 @@
 
 <div class="container">
   <header>
-    <img src="https://zandenkoh.github.io/Radium/assets/Neutron-1.png" alt="Logo" class="logo">
+    <img src="./Assets/Neutron-1.png" alt="Logo" class="logo">
     <h1>Sign in to Theorem</h1>
   </header>
   
@@ -36,69 +37,38 @@
 <div class="form-popup" id="sign-up-form">
   <div class="form-content">
     <header>
-      <img src="https://zandenkoh.github.io/Radium/assets/Neutron-1.png" alt="Logo" class="logo">
+      <img src="./Assets/Neutron-1.png" alt="Logo" class="logo">
       <h1>Create an account</h1>
     </header>
     <div id="step-1" class="form-step active">
+      <label for="sign-up-email" class="sign-up-labels">Email</label>
       <input type="email" id="sign-up-email" placeholder="Email" required>
+      <label for="password" class="sign-up-labels">Password</label>
       <input type="password" id="password" placeholder="Password" required>
       <button type="button" id="next-step-1">Next</button>
+      <button type="button" id="back-step">Close</button>
     </div>
     <div id="step-2" class="form-step">
+      <h3>Name and Date of birth</h3>
+      <p>Confirm your own age, even if this account is for a business, a pet, or something else.</p>
+      <label for="name" class="sign-up-labels">Name</label>
       <input type="text" id="name" placeholder="Full Name" required>
+      <label for="dob" class="sign-up-labels">Date of Birth</label>
       <input type="date" id="dob" required>
       <button type="button" id="next-step-2">Next</button>
     </div>
     <div id="step-3" class="form-step">
-      <p>By clicking "Sign Up", you agree to our <a href="#">Terms & Conditions</a>.</p>
-      <label id="agree-terms">
+      <p>By clicking "Sign up", you agree to our <a href="#">Terms & Conditions</a>.</p>
+      <!--<label id="agree-terms">
         <input type="checkbox"> I agree to the Terms & Conditions
-      </label>
-      <button type="button" id="sign-up-button" disabled>Sign Up</button>
+      </label>-->
+      <button type="button" id="sign-up-button">Sign up</button>
     </div>
   </div>
 </div>
 
 
-  <!-- Sign Up Popup -->
-  <div id="sign-up-form" class="form-popup">
-    <div class="form-content">
-      <header>
-        <img src="logo.png" alt="Logo" class="logo">
-        <h1>Create Account</h1>
-      </header>
 
-      <form id="sign-up">
-          <form id="step-1" class="form-step active">
-            <!-- Email Input with Label -->
-            <label for="sign-up-email" class="sign-up-labels">Email</label>
-            <input type="email" id="sign-up-email" placeholder="Email" required>
-
-            <!-- Password Input with Label -->
-            <labe for="password" class="sign-up-labels">Password</label>
-            <input type="password" id="password" placeholder="Password" required>
-
-            <!-- Next Button -->
-            <button type="button" id="next-step-1">Next</button>
-        </form>
-
-
-        <div id="step-2" class="form-step">
-          <input type="text" id="name" placeholder="Name" required>
-          <input type="date" id="dob" placeholder="Date of Birth" required>
-          <button type="button" id="next-step-2">Next</button>
-        </div>
-
-        <div id="step-3" class="form-step">
-          <p>By signing up, you agree to our <a href="/terms">Terms & Conditions</a>.</p>
-          <label class="end-label">
-            <input type="checkbox" id="agree-terms"> I agree to the Terms & Conditions
-          </label>
-          <button type="button" id="sign-up-button" disabled>Sign Up</button>
-        </div>
-      </form>
-    </div>
-  </div>
 
   <script src="join.js"></script>
 </body>
