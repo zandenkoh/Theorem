@@ -60,6 +60,7 @@ nextButton.addEventListener('click', () => {
 
           // Handle "Sign In" button logic
           signInButton.addEventListener('click', () => {
+            event.preventDefault();
             const password = passwordInput.value.trim();
 
             if (!password) {
