@@ -103,7 +103,8 @@ button:hover {
 }
 
 button:disabled {
-  background-color: #ddd;
+  opacity: 0.5;
+  scale: 0.98;
   cursor: not-allowed;
 }
 
@@ -145,6 +146,7 @@ button:disabled {
 #signup-link a {
   color: #007bff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 #signup-link a:hover {
@@ -304,8 +306,26 @@ input[type="password"] {
 }
 
 #sign-up-button:disabled {
-  background-color: #ccc;
+  background-color: #;
   cursor: not-allowed;
+}
+
+#username-status {
+  margin-bottom: 40px;
+  margin-top: -10px;
+}
+
+.error-message {
+  margin-top: -30px;
+  margin-bottom: 30px;
+  color: red;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.error {
+  border: 3px solid red;
 }
 
 /* Responsiveness */
