@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,61 +12,79 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
 
-<div class="container">
-  <header>
-    <img src="../Assets/Neutron-1.png" alt="Logo" class="logo">
-    <h1>Sign in to Theorem</h1>
-  </header>
-  
-  <!-- Sign In Form -->
-  <form id="sign-in-form">
-    <label for="email" id="sign-in-label">Email</label>
-    <input type="email" class="email-input" id="email" placeholder="Email address" required>
-    <button type="button" id="next-button">Continue</button>
-    <button type="button" id="forgot-password">Forgot password?</button>
-  </form>
-  
-  <!-- Sign Up Link -->
-  <p id="signup-link">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
-</div>
-
-<!-- Sign Up Form Popup -->
-<div class="form-popup" id="sign-up-form">
-  <div class="form-content">
+  <div class="container">
     <header>
       <img src="../Assets/Neutron-1.png" alt="Logo" class="logo">
-      <h1>Create an account</h1>
+      <h1>Sign in to Theorem</h1>
     </header>
-    <div id="step-1" class="form-step active">
-      <label for="sign-up-email" class="sign-up-labels">Email</label>
-      <input type="email" id="sign-up-email" placeholder="Email" required>
-      <label for="password" class="sign-up-labels">Password</label>
-      <input type="password" id="password" placeholder="Password" required>
-      <button type="button" id="next-step-1">Next</button>
-      <button type="button" id="back-step">Close</button>
-    </div>
-    <div id="step-2" class="form-step">
-      <h3>Name and Date of birth</h3>
-      <p>Confirm your own age, even if this account is for a business, a pet, or something else.</p>
-      <label for="name" class="sign-up-labels">Name</label>
-      <input type="text" id="name" placeholder="Full Name" required>
-      <label for="dob" class="sign-up-labels">Date of Birth</label>
-      <input type="date" id="dob" required>
-      <button type="button" id="next-step-2">Next</button>
-    </div>
-    <div id="step-3" class="form-step">
-      <p>By clicking "Sign up", you agree to our <a href="#">Terms & Conditions</a>.</p>
-      <!--<label id="agree-terms">
+
+    <!-- Sign In Form -->
+    <form id="sign-in-form">
+      <label for="email" id="sign-in-label">Email</label>
+      <input type="email" class="email-input" id="email" placeholder="Email address" required>
+      <p id="email-error-message" class="error-message"></p>
+      <button type="button" id="next-button">Continue</button>
+      <button type="button" id="forgot-password">Forgot password?</button>
+    </form>
+
+    <!-- Sign Up Link -->
+    <p id="signup-link">Don't have an account? <a id="show-signup">Sign up</a></p>
+  </div>
+
+  <!-- Sign Up Form Popup -->
+  <div class="form-popup" id="sign-up-form">
+    <div class="form-content">
+      <header>
+        <img src="../Assets/Neutron-1.png" alt="Logo" class="logo">
+        <h1>Create an account</h1>
+      </header>
+      <div id="step-1" class="form-step active">
+        <label for="sign-up-email" class="sign-up-labels">Email</label>
+        <input type="email" id="sign-up-email" placeholder="Email" required>
+        <label for="password" class="sign-up-labels">Password</label>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="button" id="next-step-1">Next</button>
+        <button type="button" id="back-step">Close</button>
+      </div>
+      <div id="step-2" class="form-step">
+        <h3>Name and Date of birth</h3>
+        <p>Confirm your own age, even if this account is for a business, a pet, or something else.</p>
+        <label for="name" class="sign-up-labels">Name</label>
+        <input type="text" id="name" placeholder="Full Name" required>
+        <label for="dob" class="sign-up-labels">Date of Birth</label>
+        <input type="date" id="dob" required>
+        <button type="button" id="next-step-2">Next</button>
+      </div>
+      <div id="step-username" class="form-step">
+        <h3>Choose a Username</h3>
+        <p>Pick a unique username to identify yourself.</p>
+        <label for="username" class="sign-up-labels">Username</label>
+        <input type="text" id="username" placeholder="Enter username" required>
+        <p id="username-status"></p>
+        <button type="button" id="next-step-username" disabled>Next</button>
+      </div>
+
+      <div id="step-3" class="form-step">
+        <p>By clicking "Sign up", you agree to our <a href="#">Terms & Conditions</a>.</p>
+        <!--<label id="agree-terms">
         <input type="checkbox"> I agree to the Terms & Conditions
       </label>-->
-      <button type="button" id="sign-up-button">Sign up</button>
+        <button type="button" id="sign-up-button">Sign up</button>
+      </div>
     </div>
   </div>
-</div>
+
+
+
+
   <script src="join.js"></script>
 </body>
+
 </html>
